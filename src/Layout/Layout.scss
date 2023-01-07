@@ -1,7 +1,9 @@
 @import "../styles/main.scss";
 
 .layout-container {
-  position: relative;
+  //   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 // header------------------------------------->
@@ -21,6 +23,9 @@
   max-width: 348px;
   max-height: 69px;
   padding-bottom: 20px;
+  @media screen and (max-width: 530px) {
+    max-width: 200px;
+  }
   img {
     max-width: 100%;
     max-height: 100%;
@@ -43,17 +48,22 @@
   @include flex();
   .footer-container {
     margin: 0 auto;
-    height: 300px;
-    width: 100%;
+    min-height: 300px;
+    width: 95%;
     @include flex();
+    flex-wrap: wrap;
     flex-direction: column;
     text-align: start;
     .top-box {
       @include flexWithValue(space-evenly, top);
+      flex-wrap: wrap;
       width: 100%;
+      gap: 1rem;
+      padding: 20px;
       .link-box {
         // @include flex();
         // flex-direction: column;
+        min-width: 200px;
         .logo-box {
           width: 70%;
           img {

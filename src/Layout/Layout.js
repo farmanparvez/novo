@@ -6,7 +6,7 @@ import "./Layout.scss"
 
 const Layout = () => {
   return (
-    <div className="layout-contiainer">
+    <div className="layout-container">
       <div><Header /></div>
       <div><Outlet /></div>
       <div><Footer /></div>

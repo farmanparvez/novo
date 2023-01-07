@@ -9,21 +9,30 @@
   @include flex();
   flex-direction: column;
   h1 {
+    text-align: center;
     color: $white;
     font-weight: 700;
-    font-size: 72px;
-    line-height: 92px;
+    font-size: clamp(30px, 5vw, 72px);
+    // line-height: 92px;
   }
   .select-container {
     @include flexWithValue(space-between, center);
+    flex-wrap: wrap;
     width: 60%;
-    height: 60px;
+    min-height: 60px;
     background-color: $white;
     padding: 10px;
     border-radius: 6px;
+    @media screen and (max-width: 1000px) {
+        width: 90%;
+    }
+    @media screen and (max-width: 530px) {
+        width: 90%;
+        @include flexWithValue(center, center);
+    }
     .selection {
       height: 60px;
-      width: 200px;
+      width: 100%;
       border: $white;
       .option {
         font-size: 20px;
@@ -44,19 +53,30 @@
 }
 
 // tagline---------------------------------------------->
+// .wrap{
+//     @include flexWithValue(flex-end, center);
+//     width: 100vw;
+//     height: 200px;
+//     // background-color: #002955;
+//     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+//     clip-path: circle(65% at 49% -160%);
+
+// }
 .tagline-wrapper {
   background-image: url("../../assets/image/Vector.png");
-  height: 300px;
+  min-height: 300px;
   margin: 0 auto;
   @include flexWithValue(flex-end, center);
   flex-direction: column;
   text-align: center;
   .tagline-container {
+    width: 95%;
+    margin: 0 auto;
     h1 {
       font-family: "Mont-Trial";
       font-style: normal;
       font-weight: 700;
-      font-size: 96px;
+      font-size: clamp(30px, 5vw, 72px);
       margin: 0;
     }
   }
@@ -65,7 +85,7 @@
 // cardSection----------------------------->
 .card-section-container {
   @include flex();
-  padding: 30px;
+//   padding: 30px;
   width: 100%;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -79,6 +99,7 @@
     margin: 20px;
     height: 300px;
     width: 15%;
+    min-width: 200PX;
     .title {
       font-size: 26px;
       font-weight: 700;
@@ -95,16 +116,18 @@
   @include flex();
   flex-direction: column;
   .tittle {
-    font-size: 52px;
+    font-size: clamp(30px, 5vw, 52px);
     font-weight: 700;
   }
   .container {
     @include flex();
+    flex-wrap: wrap;
     width: 70%;
     margin: 50px auto;
     .left {
       @include flex();
       flex-basis: 50%;
+      min-width: 400px;
       .btn {
         background-color: #002955;
         color: $white;
@@ -125,6 +148,7 @@
     }
     .right {
       flex-basis: 50%;
+      min-width: 400px;
       @include flex();
       .logo-box {
         width: 70%;
